@@ -63,16 +63,7 @@
                     style="z-index:15;font-family:'Poppins';text-transform:uppercase;">WISH YOU
                 </rs-layer><!--
 
-       --><rs-layer id="slider-16-slide-57-layer-5" data-type="image" data-rsp_ch="on"
-                    data-xy="xo:-122px,-100px,-75px,-8px;yo:-46px,-37px,-28px,-14px;"
-                    data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
-                    data-dim="w:179px,147px,111px,68px;h:504px,416px,316px,194px;" data-frame_0="y:-50,-41,-31,-19;"
-                    data-frame_1="st:570;sp:1000;" data-frame_999="o:0;st:w;sR:7280;" data-loop_0="y:-10;"
-                    data-loop_999="y:10;sp:3000;e:sine.inOut;yym:t;" style="z-index:19;"><img
-                        src="rs-plugin/assets/dummy.png" alt="Church Website Template - Chirstmas"
-                        class="tp-rs-img rs-lazyload" width="300" height="845"
-                        data-lazyload="rs-plugin/assets/dots4.png" data-no-retina>
-                </rs-layer><!--
+       --><!--
 
        --><rs-layer id="slider-16-slide-57-layer-6" class="Concept-SubTitle" data-type="text" data-rsp_ch="on"
                     data-xy="x:c;xo:253px,285px,245px,-9px;y:m;yo:-69px,-42px,-39px,-94px;"
@@ -83,16 +74,7 @@
                     style="z-index:14;font-family:'Poppins';text-transform:uppercase;">& Happy New Year
                 </rs-layer><!--
 
-       --><rs-layer id="slider-16-slide-57-layer-7" data-type="image" data-rsp_ch="on"
-                    data-xy="x:r;xo:-86px,-71px,-53px,-9px;yo:-46px,-37px,-28px,-18px;"
-                    data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
-                    data-dim="w:179px,147px,111px,68px;h:504px,416px,316px,194px;" data-frame_0="y:-50,-41,-31,-19;"
-                    data-frame_1="st:1090;sp:1000;" data-frame_999="o:0;st:w;sR:6820;" data-frame_hover="iC:true;"
-                    data-loop_0="y:-10;" data-loop_999="y:10;sp:3000;e:sine.inOut;yym:t;" style="z-index:18;"><img
-                        src="rs-plugin/assets/dummy.png" alt="Church Website Template - Chirstmas"
-                        class="tp-rs-img rs-lazyload" width="300" height="845"
-                        data-lazyload="rs-plugin/assets/dots4.png" data-no-retina>
-                </rs-layer><!--
+       --><!--
 
        --><rs-layer id="slider-16-slide-57-layer-8" class="move-cloud-left5" data-type="image" data-rsp_ch="on"
                     data-xy="xo:-213px,489px,371px,228px;y:m;yo:123px,-267px,-202px,-124px;"

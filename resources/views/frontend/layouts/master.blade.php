@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="images/favicon.png" rel="icon">
 	<!--Title-->
-	<title>@yield('title')</title>
+	<title>Theodiaspora - @yield('title')</title>
 	<!-- CSS -->
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
@@ -116,8 +116,6 @@
             @else
                 @yield('frontend.layouts.header-default')
             @endif
-
-			@include('frontend.layouts.rs')
 
 			@yield('content')
 		</div>

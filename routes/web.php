@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -7,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
 Route::get('/', [FrontendController::class, 'index']);
+Route::get('/contact',[ContactController::class,'index'])->name('contacts.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

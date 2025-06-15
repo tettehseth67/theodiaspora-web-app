@@ -2,6 +2,7 @@
 @section('title', 'HomePage')
 @section('header')
 @include('frontend.layouts.header')
+@include('frontend.layouts.rs')
 @endsection
 @section('content')
     <div class="content-wrapper pad-none">
