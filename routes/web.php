@@ -1,14 +1,23 @@
 <?php
 
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SermonController;
 
-Route::get('/', [FrontendController::class, 'index']);
-Route::get('/contact',[ContactController::class,'index'])->name('contacts.index');
+Route::get('/', [PageController::class, 'index']);
+Route::get('/contact',[PageController::class,'contact'])->name('contacts.index');
+Route::get('/about', [PageController::class, 'about'])->name('about.index');
+
+Route::get('/sermons', [SermonController::class, 'index'])->name('sermons');
+Route::get('/sermons/{id}', [SermonController::class, 'show'])->name('sermons.show');
+Route::get('/sermons/create', [SermonController::class, 'create'])->name('sermons.create');
+Route::get('/sermons/{id}/edit', [SermonController::class, 'edit'])->name('sermons.edit');
+Route::post('/sermons', [SermonController::class, 'store'])->name('sermons.store');
+Route::put('/sermons/{id}', [SermonController::class, 'update'])->name('sermons.update');
+Route::delete('/sermons/{id}', [SermonController::class, 'destroy'])->name('sermons.destroy');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

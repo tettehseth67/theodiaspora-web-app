@@ -14,22 +14,22 @@
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
 	<!-- Simple Line Icons -->
-	<link rel="stylesheet" href="css/simple-line-icons.min.css">
+	<link rel="stylesheet" href="{{ asset('css/simple-line-icons.min.css') }}">
 	<!-- Themify Icons -->
-	<link rel="stylesheet" href="css/themify-icons.css">
+	<link rel="stylesheet" href="{{ asset('css/themify-icons.css') }}">
 	<!-- Owl Slider -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
 	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
 	<!-- Revolution Slider -->
-	<link rel="stylesheet" type="text/css" href="rs-plugin/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+	<link rel="stylesheet" type="text/css" href="{{ asset('rs-plugin/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css') }}">
 	<!-- REVOLUTION STYLE SHEETS -->
-	<link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css">
-	<link rel="stylesheet" type="text/css" href="rs-plugin/css/home-10/rs6.css">
+	<link rel="stylesheet" type="text/css" href="{{ asset('rs-plugin/css/settings.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('rs-plugin/css/home-10/rs6.css') }}">
 	<!-- Main Style -->
-	<link rel="stylesheet" href="css/color-schemes/red.css">
-	<link rel="stylesheet" href="css/style.css" class="main-style">
+	<link rel="stylesheet" href="{{ asset('css/color-schemes/red.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/style.css') }}" class="main-style">
 	<style>
 		#rev_slider_6_1_wrapper .tp-loader.spinner1 {
 			background-color: #FFFFFF !important;

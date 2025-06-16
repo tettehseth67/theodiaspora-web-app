@@ -98,7 +98,7 @@
                                         <li class="active cus-img-menu">
                                             <a href="/">Home</a>
                                         </li>
-                                        <li><a href="about-us.html">About Us</a></li>
+                                        <li><a href="{{ route('about.index') }}">About Us</a></li>
                                         <li>
                                             <a href="events.html">Events</a>
                                         </li>
