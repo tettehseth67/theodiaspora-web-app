@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\AdminAuth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Validation\ValidatesRequests;
-use App\Models\Admin;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
@@ -17,20 +19,18 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
-        $this->validate($request, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:admins',
-            'password' => 'required|string|min:8|confirmed',
+        //dd($request->all());
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
 
-        $admin = Admin::create([
+        Admin::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => bcrypt($request->password),
+            'password' => Hash::make($request->password),
         ]);
-
-        auth('admin')->login($admin);
-
-        return redirect()->route('admin.dashboard');
+        return redirect()->route('admin.login')->with('success', 'Registration successful! Please log in.');
     }
 }

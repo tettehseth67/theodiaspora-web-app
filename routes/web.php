@@ -2,7 +2,6 @@
 
 
 use App\Http\Controllers\FrontendController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SermonController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
@@ -24,20 +23,13 @@ Route::middleware(['auth'])->group(function () {
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
     // Add more admin-only routes here
+    Route::resource('sermons', SermonController::class);
 });
 
 // Regular user routes
 Route::prefix('user')->name('user.')->middleware(['auth'])->group(function () {
     Route::get('/dashboard', [UserController::class, 'index'])->name('dashboard');
 });
-
-// Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(function () {
-//     Route::get('/', function () {
-//         return view('admin.dashboard');
-//     })->name('dashboard');
-
-//     Route::resource('sermons', SermonController::class);
-// });
 
 Route::prefix('admin')->name('admin.')->middleware('guest:admin')->group(function () {
     Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');

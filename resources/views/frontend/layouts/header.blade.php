@@ -69,6 +69,22 @@
                             </form>
                         </div>
                     </li>
+                    @guest
+        <!-- Show for guests (not logged in) -->
+        <li><a href="{{ route('login') }}">Login</a></li>
+        <li><a href="{{ route('register') }}">Register</a></li>
+    @else
+        @if (!auth()->guard('admin')->check())
+            <!-- Logged in as regular user -->
+            <li><a href="{{ route('user.dashboard') }}">My Account</a></li>
+            <li>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit" class="btn btn-link p-0 m-0 align-baseline">Logout</button>
+                </form>
+            </li>
+        @endif
+    @endguest
                 </ul>
             </div>
         </div>

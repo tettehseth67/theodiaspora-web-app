@@ -17,9 +17,9 @@
 
     <!-- Stylesheet
 ========================= -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('/css/all.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/stylesheet.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin_asset/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin_asset/css/all.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin_asset/css/stylesheet.css') }}">
     <!-- Colors Css -->
     <link id="color-switcher" type="text/css" rel="stylesheet" href="#">
 </head>
@@ -29,11 +29,11 @@
     @yield('content')
 
     <!-- Script -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('admin_asset/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('admin_asset/js/bootstrap.bundle.min.js') }}"></script>
     <!-- Style Switcher -->
-    <script src="js/switcher.min.js"></script>
-    <script src="js/theme.js"></script>
+    <script src="{{ asset('admin_asset/js/switcher.min.js') }}"></script>
+    <script src="{{ asset('admin_asset/js/theme.js') }}"></script>
 
 </body>
 
