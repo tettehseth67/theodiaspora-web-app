@@ -127,38 +127,38 @@
 	@include('frontend.layouts.footer')
 	<!-- Footer -->
 	<!-- jQuery Lib -->
-	<script src="js/jquery.min.js"></script>
+	<script src="{{asset('js/jquery.min.js')}}"></script>
 	<!-- Bootstrap Js -->
-	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 	<!-- Easing Js -->
-	<script src="js/jquery.easing.min.js"></script>
+	<script src="{{ asset('js/jquery.easing.min.js') }}"></script>
 	<!-- Carousel Js Code -->
-	<script src="js/owl.carousel.min.js"></script>
+	<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
 	<!-- Paroller Js -->
-	<script src="js/jquery.paroller.min.js"></script>
+	<script src="{{ asset('js/jquery.paroller.min.js') }}"></script>
 	<!-- Isotope Js -->
-	<script src="js/isotope.pkgd.min.js"></script>
+	<script src="{{ asset('js/isotope.pkgd.min.js') }}"></script>
 	<!-- Magnific Popup Js -->
-	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
 	<!-- Day Counter Js -->
-	<script src="js/jquery.countdown.min.js"></script>
+	<script src="{{ asset('js/jquery.countdown.min.js') }}"></script>
 	<!-- Circle Progress Js -->
-	<script src="js/jquery.circle.progress.min.js"></script>
+	<script src="{{ asset('js/jquery.circle.progress.min.js') }}"></script>
 	<!-- Validator Js -->
-	<script src="js/validator.min.js"></script>
+	<script src="{{ asset('js/validator.min.js') }}"></script>
 	<!-- Smart Resize Js -->
-	<script src="js/smartresize.min.js"></script>
+	<script src="{{ asset('js/smartresize.min.js') }}"></script>
 	<!-- Appear Js -->
-	<script src="js/jquery.appear.min.js"></script>
+	<script src="{{ asset('js/jquery.appear.min.js') }}"></script>
 	<!-- Theme Custom Js -->
-	<script src="js/custom.js"></script>
+	<script src="{{ asset('js/custom.js') }}"></script>
 	<!-- REVOLUTION JS FILES -->
-	<script src="rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-	<script src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+	<script src="{{ asset('rs-plugin/js/jquery.themepunch.tools.min.js') }}"></script>
+	<script src="{{ asset('rs-plugin/js/jquery.themepunch.revolution.min.js') }}"></script>
 	<!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
-	<script src="rs-plugin/js/home-10/rbtools.min.js"></script>
-	<script src="rs-plugin/js/home-10/rs6.min.js"></script>
-	<script src="rs-plugin/js/home-10/home-10.js"></script>
+	<script src="{{ asset('rs-plugin/js/home-10/rbtools.min.js') }}"></script>
+	<script src="{{ asset('rs-plugin/js/home-10/rs6.min.js') }}"></script>
+	<script src="{{ asset('rs-plugin/js/home-10/home-10.js') }}"></script>
 	<!--<script src="rs-plugin/js/extensions/revolution.extension.slideanims.min.js"></script>
 	<script src="rs-plugin/js/extensions/revolution.extension.actions.min.js"></script>
 	<script src="rs-plugin/js/extensions/revolution.extension.carousel.min.js"></script>

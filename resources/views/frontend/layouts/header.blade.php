@@ -98,7 +98,7 @@
                                         <li class="active cus-img-menu">
                                             <a href="/">Home</a>
                                         </li>
-                                        <li><a href="{{ route('about.index') }}">About Us</a></li>
+                                        <li><a href="">About Us</a></li>
                                         <li>
                                             <a href="events.html">Events</a>
                                         </li>
@@ -142,7 +142,7 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li class="dropdown"><a href="{{ route('contacts.index') }}">Contact Us</a></li>
+                                        <li class="dropdown"><a href="">Contact Us</a></li>
                                     </ul>
                                 </li>
                                 <!--List Item End-->
