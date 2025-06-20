@@ -1,273 +1,151 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class=" layout-menu-fixed layout-compact " data-assets-path="../assets/"
+    data-template="vertical-menu-template-free">
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.72.0">
-    <title>Dashboard Template · Bootstrap</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
 
-    <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/dashboard/">
+    <title>Theodiaspora - @yield('title')</title>
 
 
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
-        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    <!-- Canonical SEO -->
+
+    <meta name="description"
+        content="Sneat Free is the best bootstrap 5 dashboard for responsive web apps. Streamline your app development process with ease.">
+    <meta name="keywords"
+        content="Sneat free dashboard, Sneat free bootstrap dashboard, free admin, free theme, open source, free, MIT license">
+    <meta property="og:title" content="Sneat Bootstrap Dashboard FREE by ThemeSelection">
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://themeselection.com/item/sneat-dashboard-free-bootstrap/">
+    <meta property="og:image" content="images/sneat-hrml-free-smm-banner.png">
+    <meta property="og:description"
+        content="Sneat Free is the best bootstrap 5 dashboard for responsive web apps. Streamline your app development process with ease.">
+    <meta property="og:site_name" content="ThemeSelection">
+    <link rel="canonical" href="https://themeselection.com/item/sneat-dashboard-free-bootstrap/">
+
+
+
+    <!-- ? PROD Only: Google Tag Manager (Default ThemeSelection: GTM-5DDHKGP, PixInvent: GTM-5J3LMKC) -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5DDHKGP');
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
-        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous">
-    </script>
+    <!-- End Google Tag Manager -->
 
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/admin_asset/images/favicon.ico">
 
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
 
-        body {
-            font-size: .875rem;
-        }
+    <link rel="stylesheet" href="/admin_asset/css/iconify-icons.css">
 
-        .feather {
-            width: 16px;
-            height: 16px;
-            vertical-align: text-bottom;
-        }
+    <!-- Core CSS -->
+    <!-- build:css assets/vendor/css/theme.css  -->
 
-        /* Sidebar*/
+    <link rel="stylesheet" href="/admin_asset/css/core.css">
+    <link rel="stylesheet" href="/admin_asset/css/demo.css">
 
-        .sidebar {
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            z-index: 100;
-            /* Behind the navbar */
-            padding: 48px 0 0;
-            /* Height of navbar */
-            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-        }
 
-        @media (max-width: 767.98px) {
-            .sidebar {
-                top: 5rem;
-            }
-        }
+    <!-- Vendors CSS -->
 
-        .sidebar-sticky {
-            position: relative;
-            top: 0;
-            height: calc(100vh - 48px);
-            padding-top: .5rem;
-            overflow-x: hidden;
-            overflow-y: auto;
-            /* Scrollable contents if viewport is shorter than content. */
-        }
+    <link rel="stylesheet" href="/admin_asset/css/perfect-scrollbar.css">
 
-        .sidebar .nav-link {
-            font-weight: 500;
-            color: #333;
-        }
+    <!-- endbuild -->
 
-        .sidebar .nav-link .feather {
-            margin-right: 4px;
-            color: #727272;
-        }
+    <link rel="stylesheet" href="/admin_asset/css/apex-charts.css">
 
-        .sidebar .nav-link.active {
-            color: #007bff;
-        }
+    <!-- Page CSS -->
 
-        .sidebar .nav-link:hover .feather,
-        .sidebar .nav-link.active .feather {
-            color: inherit;
-        }
 
-        .sidebar-heading {
-            font-size: .75rem;
-            text-transform: uppercase;
-        }
+    <!-- Helpers -->
+    <script src="/admin_asset/js/helpers.js"></script>
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
 
-        /*Navbar*/
-        .navbar-brand {
-            padding-top: .75rem;
-            padding-bottom: .75rem;
-            font-size: 1rem;
-            background-color: rgba(0, 0, 0, .25);
-            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
-        }
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
 
-        .navbar .navbar-toggler {
-            top: .25rem;
-            right: 1rem;
-        }
+    <script src="/admin_asset/js/config.js"></script>
 
-        .navbar .form-control {
-            padding: .75rem 1rem;
-            border-width: 0;
-            border-radius: 0;
-        }
-
-        .form-control-dark {
-            color: #fff;
-            background-color: rgba(255, 255, 255, .1);
-            border-color: rgba(255, 255, 255, .1);
-        }
-
-        .form-control-dark:focus {
-            border-color: transparent;
-            box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
-        }
-    </style>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Company name</a>
-        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse"
-            data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
-        <ul class="navbar-nav px-3">
-            <li class="nav-item text-nowrap">
-                <form method="POST" action="{{ route('admin.logout') }}">
-                    @csrf
-                    <button type="submit" class="nav-link btn btn-link text-white" style="padding: 0; border: none; background: none;">
-                        Sign out
-                    </button>
-                </form>
-            </li>
-        </ul>
-    </nav>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar  ">
+        <div class="layout-container">
+            @include('admin.layouts.sidebar')
 
-    <div class="container-fluid">
-        <div class="row">
-            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-                <div class="position-sticky pt-3">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ route('admin.dashboard') }}">
-                                <span data-feather="home"></span>
-                                Dashboard
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="file"></span>
-                                Orders
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="shopping-cart"></span>
-                                Products
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="users"></span>
-                                Customers
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="bar-chart-2"></span>
-                                Reports
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="layers"></span>
-                                Integrations
-                            </a>
-                        </li>
-                    </ul>
 
-                    <h6
-                        class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                        <span>Saved reports</span>
-                        <a class="link-secondary" href="#" aria-label="Add a new report">
-                            <span data-feather="plus-circle"></span>
-                        </a>
-                    </h6>
-                    <ul class="nav flex-column mb-2">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="file-text"></span>
-                                Current month
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="file-text"></span>
-                                Last quarter
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="file-text"></span>
-                                Social engagement
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="file-text"></span>
-                                Year-end sale
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+            <!-- Layout container -->
+            <div class="layout-page">
+                @include('admin.layouts.header')
 
-            <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-                <div
-                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Dashboard</h1>
-                    <div class="btn-toolbar mb-2 mb-md-0">
-                        <div class="btn-group mr-2">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-                        </div>
-                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                            <span data-feather="calendar"></span>
-                            This week
-                        </button>
-                    </div>
-                </div>
-
-                <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
-            </main>
+                @yield('content')
+            </div>
+            <!-- / Layout page -->
         </div>
+
+
+
+        <!-- Overlay -->
+        <div class="layout-overlay layout-menu-toggle"></div>
+
+
     </div>
 
+    <!-- Core JS -->
+    <script src="/admin_asset/js/jquery.js"></script>
 
-    <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-DBjhmceckmzwrnMMrjI7BvG2FmRuxQVaTfFYHgfnrdfqMhxKt445b7j3KBQLolRl" crossorigin="anonymous">
-    </script>
+    <script src="/admin_asset/js/popper.js"></script>
+    <script src="/admin_asset/js/bootstrap.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.24.1/feather.min.js"
-        integrity="sha384-EbSscX4STvYAC/DxHse8z5gEDaNiKAIGW+EpfzYTfQrgIlHywXXrM9SUIZ0BlyfF" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
-        integrity="sha384-i+dHPTzZw7YVZOx9lbH5l6lP74sLRtMtwN2XjVqjf3uAGAREAF4LMIUDTWEVs4LI" crossorigin="anonymous">
-    </script>
-    <script src="dashboard.js"></script>
+
+
+
+    <script src="/admin_asset/js/perfect-scrollbar.js"></script>
+
+    <script src="/admin_asset/js/menu.js"></script>
+
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+    <script src="/admin_asset/js/apexcharts.js"></script>
+
+    <!-- Main JS -->
+
+    <script src="/admin_asset/js/main.js"></script>
+
+
+    <!-- Page JS -->
+    <script src="/admin_asset/js/dashboards-analytics.js"></script>
+
+    <!-- Place this tag before closing body tag for github widget button. -->
+    <script async="" defer="" src="/admin_asset/js/buttons.js"></script>
+
+
+
+
+
+
 </body>
 
-</html>
+</html><!-- beautify ignore:end -->

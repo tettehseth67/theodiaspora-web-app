@@ -6,8 +6,8 @@
                 <div class="sticky-head">
                     <div class="basic-container clearfix">
                         <ul class="nav mobile-header-items pull-left">
-                            <li class="nav-item"><a href="#" class="zmm-toggle img-before"><i
-                                        class="ti-menu"></i></a></li>
+                            <li class="nav-item"><a href="#" class="zmm-toggle img-before"><i class="ti-menu"></i></a>
+                            </li>
                         </ul>
                         <ul class="nav mobile-header-items pull-center">
                             <li>
@@ -55,36 +55,34 @@
                             <a href="#" class="social-dribble"><span class="ti-dribbble"></span></a>
                         </div>
                     </li>
-                    <li><a href="#" class="full-view-switch text-center"><i
-                                class="ti-search typo-white"></i></a></li>
+                    <li><a href="#" class="full-view-switch text-center"><i class="ti-search typo-white"></i></a>
+                    </li>
                     <li>
                         <!--Search-->
                         <div class="full-view-wrapper hide">
                             <a href="#" class="close full-view-close"></a>
                             <form class="navbar-form search-form" role="search">
                                 <div class="input-group">
-                                    <input class="form-control" placeholder="Search hit enter.."
-                                        name="srch-term" type="text">
+                                    <input class="form-control" placeholder="Search hit enter.." name="srch-term"
+                                        type="text">
                                 </div>
                             </form>
                         </div>
                     </li>
-                    @guest
-        <!-- Show for guests (not logged in) -->
-        <li><a href="{{ route('login') }}">Login</a></li>
-        <li><a href="{{ route('register') }}">Register</a></li>
-    @else
-        @if (!auth()->guard('admin')->check())
-            <!-- Logged in as regular user -->
-            <li><a href="{{ route('user.dashboard') }}">My Account</a></li>
-            <li>
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <button type="submit" class="btn btn-link p-0 m-0 align-baseline">Logout</button>
-                </form>
-            </li>
-        @endif
-    @endguest
+                        @guest
+                            <li class="nav-item"><a href="{{ route('login') }}">Login</a></li>
+                            <li class="nav-item"><a href="{{ route('register') }}">Register</a></li>
+                        @else
+                            @if (!auth()->guard('admin')->check())
+                                <li class="nav-item"><a href="{{ route('user.dashboard') }}">My Account</a></li>
+                                <li class="nav-item">
+                                    <button class="btn btn-link p-0 m-0 align-baseline py-2 px-3 text-decoration-none" data-bs-toggle="modal"
+                                        data-bs-target="#logoutModal">
+                                        Logout
+                                    </button>
+                                </li>
+                            @endif
+                        @endguest
                 </ul>
             </div>
         </div>
@@ -99,9 +97,8 @@
                             <!--Overlay Menu Switch-->
                             <ul class="nav navbar-items pull-left">
                                 <li class="list-item">
-                                    <a href="/" class="logo-general"><img
-                                            src="images/logo-light.png" class="img-fluid" width="166"
-                                            height="50" alt="Logo" /></a>
+                                    <a href="/" class="logo-general"><img src="images/logo-light.png"
+                                            class="img-fluid" width="166" height="50" alt="Logo" /></a>
                                     <a href="/" class="logo-sticky"><img src="images/logo-dark.png"
                                             class="img-fluid" width="166" height="50" alt="Logo" /></a>
                                 </li>
@@ -178,4 +175,29 @@
         </div>
         <!--sticky-outer-->
     </div>
+    <!-- Logout Confirmation Modal -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="logoutModalLabel">Confirm Logout</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to log out?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger"
+                        onclick="document.getElementById('logout-form').submit();">
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </header>
+<form id="logout-form" action="{{ route('user.logout') }}" method="POST" class="d-none">
+    @csrf
+</form>
