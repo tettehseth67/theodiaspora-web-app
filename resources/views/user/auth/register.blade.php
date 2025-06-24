@@ -78,7 +78,7 @@
                 <div class="container h-100 d-flex flex-column">
                     <div class="row g-0">
                         <div class="col-11 col-md-10 mx-auto">
-                            <div class="logo mt-5 mb-5 mb-md-0"> <a class="d-flex" href="index.html"
+                            <div class="logo mt-5 mb-5 mb-md-0"> <a class="d-flex" href="{{ route('home') }}"
                                     title="Oxyy"><img src="images/logo.png" alt="Oxyy"></a> </div>
                         </div>
                     </div>

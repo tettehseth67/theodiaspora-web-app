@@ -44,6 +44,8 @@
                                                 data-bs-toggle="modal"
                                                 data-bs-target="#deleteModal{{ $member->id }}">Delete</button>
                                             </form>
+                                            <a href="{{ route('admin.members.show', $member->id) }}"
+                                                class="btn btn-sm btn-info">View</a>
 
                                             <!-- Delete Confirmation Modal -->
                                             <div class="modal fade"
@@ -74,6 +76,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
                                         </td>
                                     </tr>
                                 @endforeach

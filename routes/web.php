@@ -1,16 +1,18 @@
 <?php
 
-
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\FrontendController;
-use App\Http\Controllers\SermonController;
+use App\Http\Controllers\Admin\SermonController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\EventController;
+use App\Http\Controllers\Admin\DonationController;
+use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\AdminAuth\LoginController as AdminLoginController;
 use App\Http\Controllers\AdminAuth\RegisterController as AdminRegisterController;
-use App\Http\Controllers\MemberController;
+use App\Http\Controllers\Admin\MemberController;
+use App\Http\Controllers\Admin\MinistryController;
+use App\Http\Controllers\Admin\SettingsController;
+use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\UserAuth\LoginController as UserLoginController;
 use App\Http\Controllers\UserAuth\RegisterController as UserRegisterController;
 
@@ -41,10 +43,19 @@ Route::prefix('admin')->name('admin.')->middleware('auth:admin')->group(function
     // Sermons
     Route::resource('sermons', SermonController::class);
 
+    Route::resource('donations', DonationController::class);
     // Events
     Route::resource('events', EventController::class);
     // Members
     Route::resource('members', MemberController::class);
+
+    Route::resource('ministries', MinistryController::class);
+
+    Route::resource('users', UserController::class);
+
+    Route::get('settings', [SettingsController::class, 'index'])->name('settings.index');
+
+    Route::resource('testimonials', TestimonialController::class);
 
 });
 
