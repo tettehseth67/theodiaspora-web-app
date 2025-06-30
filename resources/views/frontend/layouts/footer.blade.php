@@ -8,11 +8,11 @@
                     <div class="col-lg-3 widget text-widget">
                         <div class="widget-title">
                             <!-- Title -->
-                            <h3 class="title typo-white">About Zegen</h3>
+                            <h3 class="title typo-white">About Theodiaspora</h3>
                         </div>
                         <!-- Text -->
                         <div class="widget-text margin-bottom-30">
-                            <p>Zegen Church WordPress Theme is professionaly designed for non-profit church, modern
+                            <p>Theogiaspora Congregation Theme is professionaly designed for non-profit church, modern
                                 church, prayer group, Christian, charity, non-profit organization. Grab it soon!</p>
                         </div>
                         <div class="social-icons">

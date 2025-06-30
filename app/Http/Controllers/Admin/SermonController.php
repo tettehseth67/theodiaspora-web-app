@@ -24,7 +24,7 @@ class SermonController extends Controller
         return view('admin.sermons.create');
     }
 
-    public function store(Request $request)
+    public function store(Request $request, Sermon $sermon)
     {
         // Validate and store the sermon data
         $data = $request->validate([
@@ -32,9 +32,16 @@ class SermonController extends Controller
             'description' => 'nullable|string',
             'date' => 'required|date',
             'speaker' => 'nullable|string|max:255',
+            'category_ids' => 'nullable|array',
+            'category_ids.*' => 'exists:categories,id',
         ]);
 
         Sermon::create($data);
+        if ($request->filled('category_ids')) {
+            $sermon->categories()->sync($request->input('category_ids'));
+        } else {
+            $sermon->categories()->sync([]);
+        }
 
         return redirect()->route('admin.sermons.index')->with('success', 'Sermon created successfully.');
     }
@@ -56,6 +63,11 @@ class SermonController extends Controller
 
         $sermon = Sermon::findOrFail($id);
         $sermon->update($data);
+        if ($request->filled('category_ids')) {
+            $sermon->categories()->sync($request->input('category_ids'));
+        } else {
+            $sermon->categories()->sync([]);
+        }
 
         return redirect()->route('admin.sermons.index')->with('success', 'Sermon updated successfully.');
     }

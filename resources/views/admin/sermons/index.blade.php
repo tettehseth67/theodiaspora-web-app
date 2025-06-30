@@ -16,7 +16,6 @@
                         <table class="table table-striped table-bordered" id="sermonsTable">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
                                     <th>Title</th>
                                     <th>Description</th>
                                     <th>Date</th>
@@ -27,7 +26,6 @@
                             <tbody>
                                 @foreach ($sermons as $sermon)
                                     <tr>
-                                        <td>{{ $sermon->id }}</td>
                                         <td>{{ $sermon->title }}</td>
                                         <td>{{ $sermon->description }}</td>
                                         <td>{{ $sermon->date->format('Y-m-d') }}</td>

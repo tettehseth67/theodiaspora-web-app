@@ -69,7 +69,10 @@
 
 
     <ul class="menu-inner py-1">
-        <!-- Dashboards -->
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Dashboard</span>
+        </li>
+
         <li class="menu-item active">
             <a href="{{ route('admin.dashboard') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-smile"></i>
@@ -79,6 +82,39 @@
 
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Menu</span>
+        </li>
+
+        <li class="menu-item">
+            <a href="{{ route('admin.categories.index') }}" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-category"></i>
+                <div class="text-truncate" data-i18n="Analytics">Categories</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="{{ route('admin.categories.index') }}" class="menu-link">
+                        <div class="text-truncate" data-i18n="List">List</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="{{ route('admin.categories.create') }}" class="menu-link">
+                        <div class="text-truncate" data-i18n="Create">Create</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="menu-item">
+            <a href="{{ route('admin.contacts.index') }}" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-envelope"></i>
+                <div class="text-truncate" data-i18n="Analytics">Contacts</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="{{ route('admin.contacts.index') }}" class="menu-link">
+                        <div class="text-truncate" data-i18n="List">List</div>
+                    </a>
+                </li>
+            </ul>
         </li>
 
         <li class="menu-item">
@@ -186,11 +222,11 @@
                         <div class="text-truncate" data-i18n="List">List</div>
                     </a>
                 </li>
-                <li class="menu-item">
+                {{-- <li class="menu-item">
                     <a href="{{ route('admin.donations.create') }}" class="menu-link">
                         <div class="text-truncate" data-i18n="Create">Create</div>
                     </a>
-                </li>
+                </li> --}}
             </ul>
         </li>
         {{-- Testimonials --}}

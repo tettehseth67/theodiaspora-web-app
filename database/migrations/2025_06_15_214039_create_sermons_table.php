@@ -26,6 +26,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sermons');
+        Schema::table('sermons', function (Blueprint $table) {
+            // $table->string('categories')->nullable()->after('speaker');
+        });
     }
 };

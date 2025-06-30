@@ -1,38 +1,52 @@
 <x-master header="admin.layouts.header" title="Edit Event">
-
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6 offset-md-3">
                 <div class="card">
-                    <div class="card-header d-flex justify-content-between align-items-center">
-                        <h3 class="card-title">Edit Event</h3>
+                    <div class="card-header">
+                        <h3>Edit Event</h3>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('admin.events.update', $event->id) }}" method="POST">
-                            @csrf
-                            @method('PUT')
+                        <form action="{{ route('admin.events.update', $event) }}" method="POST"
+                            enctype="multipart/form-data">
+                            @csrf @method('PUT')
+
                             <div class="mb-3">
-                                <label for="title" class="form-label">Title</label>
-                                <input type="text" class="form-control" id="title" name="title" value="{{ old('title', $event->title) }}" required>
+                                <label for="image" class="form-label">Image</label>
+                                <input type="file" class="form-control @error('image') is-invalid @enderror"
+                                    id="image" name="image" accept="image/*">
+                                @error('image')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+
+                                @if ($event->image)
+                                    <div class="mt-2">
+                                        <img src="{{ asset('storage/' . $event->image) }}" alt="Event"
+                                            style="max-width:150px;">
+                                    </div>
+                                @endif
                             </div>
+
                             <div class="mb-3">
-                                <label for="description" class="form-label">Description</label>
-                                <textarea class="form-control" id="description" name="description" rows="3" required>{{ old('description', $event->description) }}</textarea>
+                                <label for="date" class="form-label">Event Date</label>
+                                <input type="date" class="form-control @error('date') is-invalid @enderror"
+                                    id="date" name="date" value="{{ old('date', $event->date->toDateString()) }}"
+                                    required>
+                                @error('date')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
+
                             <div class="mb-3">
-                                <label for="location" class="form-label">Location</label>
-                                <input type="text" class="form-control" id="location" name="location" value="{{ old('location', $event->location) }}" required>
+                                <label for="time" class="form-label">Event Time</label>
+                                <input type="time" class="form-control @error('time') is-invalid @enderror"
+                                    id="time" name="time" value="{{ old('time', $event->time) }}">
+                                @error('time')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
-                            <div class="mb-3">
-                                <label for="date" class="form-label">Date</label>
-                                <input type="date" class="form-control" id="date" name="date" value="{{ old('date', $event->date ? $event->date->format('Y-m-d') : '') }}" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="time" class="form-label">Time</label>
-                                <input type="time" class="form-control" id="time" name="time" value="{{ old('time', $event->time ? $event->time->format('H:i') : '') }}" required>
-                            </div>
+
                             <button type="submit" class="btn btn-primary">Update Event</button>
-                            <a href="{{ route('admin.events.index') }}" class="btn btn-secondary">Cancel</a>
                         </form>
                     </div>
                 </div>

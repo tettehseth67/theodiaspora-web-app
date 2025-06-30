@@ -11,8 +11,8 @@
                             @csrf
                             @method('PUT')
                             <div class="mb-3">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $donation->name) }}" required>
+                                <label for="first_name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="first_name" name="first_name" value="{{ old('first_name', $donation->first_name) }}" required>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>

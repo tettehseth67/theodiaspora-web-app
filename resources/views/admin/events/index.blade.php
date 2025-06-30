@@ -13,16 +13,13 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        @if(session('success'))
+                        @if (session('success'))
                             <div class="alert alert-success">{{ session('success') }}</div>
                         @endif
                         <table class="table table-striped table-bordered" id="eventsTable">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Title</th>
-                                    <th>Description</th>
-                                    <th>Location</th>
+                                    <th>Image</th>
                                     <th>Date</th>
                                     <th>Time</th>
                                     <th>Actions</th>
@@ -32,11 +29,13 @@
                                 @foreach ($events as $event)
                                     <tr>
                                         <td>
-                                            {{ ($events->currentPage() - 1) * $events->perPage() + $loop->iteration }}
+                                            @if ($event->image)
+                                                <img src="{{ asset('storage/' . $event->image) }}" alt="Event"
+                                                    class="img-thumbnail" style="width: 100px; height: auto;">
+                                            @else
+                                                <span class="text-muted">No Image</span>
+                                            @endif
                                         </td>
-                                        <td>{{ $event->title }}</td>
-                                        <td>{{ $event->description }}</td>
-                                        <td>{{ $event->location }}</td>
                                         <td>{{ $event->date ? $event->date->format('Y-m-d') : 'N/A' }}</td>
                                         <td>{{ $event->time ? $event->time->format('H:i') : 'N/A' }}</td>
                                         <td>
@@ -54,8 +53,8 @@
                                                 class="btn btn-sm btn-info">View</a>
 
                                             <!-- Delete Confirmation Modal -->
-                                            <div class="modal fade"
-                                                id="deleteModal{{ $event->id }}" tabindex="-1" aria-labelledby="deleteModalLabel{{ $event->id }}"
+                                            <div class="modal fade" id="deleteModal{{ $event->id }}" tabindex="-1"
+                                                aria-labelledby="deleteModalLabel{{ $event->id }}"
                                                 aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered">
                                                     <div class="modal-content">

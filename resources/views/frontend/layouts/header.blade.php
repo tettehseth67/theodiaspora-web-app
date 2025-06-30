@@ -111,17 +111,17 @@
                                         <li class="active cus-img-menu">
                                             <a href="/">Home</a>
                                         </li>
-                                        <li><a href="">About Us</a></li>
+                                        <li><a href="{{ route('about.index') }}">About Us</a></li>
                                         <li>
-                                            <a href="events.html">Events</a>
+                                            <a href="{{ route('events.index') }}">Events</a>
                                         </li>
                                         <li>
-                                            <a href="sermons.html">Sermons</a>
+                                            <a href="{{ route('sermons.index') }}">Sermons</a>
                                         </li>
                                         <li class="dropdown mega-dropdown dropdown-sub relative"><a
-                                                href="ministries-grid-2.html">Ministries</a>
-                                            <ul class="dropdown-menu mega-dropdown-menu dropdown-col-2">
-                                                <li class="mega-dropdown-col"><a href="#"
+                                                href="{{ route('ministries.index') }}">Ministries</a>
+                                            <ul class="dropdown-menu">
+                                                <li class="mega-child-dropdown-menu"><a href="#"
                                                         class="text-uppercase theme-color">Ministry
                                                         Details</a>
                                                     <ul class="mega-child-dropdown-menu">
@@ -137,31 +137,15 @@
                                                                 Ministry</a></li>
                                                     </ul>
                                                 </li>
-                                                <li class="mega-dropdown-col"><a href="#"
-                                                        class="text-uppercase theme-color">Ministry
-                                                        Layouts</a>
-                                                    <ul class="mega-child-dropdown-menu">
-                                                        <li><a href="ministries-grid-2.html">Ministries Grid
-                                                                2</a></li>
-                                                        <li><a href="ministries-grid-3.html">Ministries Grid
-                                                                3</a></li>
-                                                        <li><a href="ministries-grid-4.html">Ministries Grid
-                                                                4</a></li>
-                                                        <li><a href="ministries-left-sidebar.html">Ministries
-                                                                Left Sidebar</a></li>
-                                                        <li><a href="ministries-grid-2.html">Ministries
-                                                                Right Sidebar</a></li>
-                                                    </ul>
-                                                </li>
                                             </ul>
                                         </li>
-                                        <li class="dropdown"><a href="">Contact Us</a></li>
+                                        <li class="dropdown"><a href="{{ route('contacts.index') }}">Contact Us</a></li>
                                     </ul>
                                 </li>
                                 <!--List Item End-->
                                 <!--List Item-->
                                 <li class="list-item">
-                                    <div class="header-navbar-text-1"><a href="donate-now.html"
+                                    <div class="header-navbar-text-1"><a href="{{ route('donations.index') }}"
                                             class="h-donate-btn">Donate</a></div>
                                 </li>
                                 <!--List Item End-->

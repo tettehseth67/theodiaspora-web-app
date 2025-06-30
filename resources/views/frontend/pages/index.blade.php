@@ -173,7 +173,7 @@
                                         </div>
                                     </div>
                                     <div class="button-section margin-top-35">
-                                        <a class="btn btn-default" href="donate-now.html" title="Learn More">Donate
+                                        <a class="btn btn-default" href="{{ route('donations.index') }}" title="Learn More">Donate
                                             Online</a>
                                     </div>
                                 </div>

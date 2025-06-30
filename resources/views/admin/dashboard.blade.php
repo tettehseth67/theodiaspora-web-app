@@ -2,14 +2,19 @@
     <div class="content-wrapper">
         <!-- Content -->
         <div class="container-xxl flex-grow-1 container-p-y">
-
             <div class="row">
                 <div class="col-xxl-8 mb-6 order-0">
                     <div class="card">
                         <div class="d-flex align-items-start row">
                             <div class="col-sm-7">
                                 <div class="card-body">
-                                    <h5 class="card-title text-primary mb-3">Congratulations John! 🎉</h5>
+                                    <h3 class="card-title text-primary mb-3">Welcome back, <span
+                                            class="fw-semibold">Admin</span>
+                                    </h3>
+                                    <h5 class="card-title mb-0">
+                                        <i class="icon-base bx bx-user-circle icon-lg text-primary"></i>
+                                        {{ auth()->user()->name }}
+                                    </h5>
                                     <p class="mb-6">You have done 72% more sales today.<br>Check your new
                                         badge in your profile.</p>
 
@@ -19,7 +24,8 @@
                             </div>
                             <div class="col-sm-5 text-center text-sm-left">
                                 <div class="card-body pb-0 px-0 px-md-6">
-                                    <img src="{{ asset('/admin_asset/images/man-with-laptop.png') }}" height="175" alt="View Badge User">
+                                    <img src="{{ asset('/admin_asset/images/man-with-laptop.png') }}" height="175"
+                                        alt="View Badge User">
                                 </div>
                             </div>
                         </div>
@@ -35,9 +41,10 @@
                                             <img src="images/chart-success.png" alt="chart success" class="rounded">
                                         </div>
                                         <div class="dropdown">
-                                            <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false">
-                                                <i class="icon-base bx bx-dots-vertical-rounded text-body-secondary"></i>
+                                            <button class="btn p-0" type="button" id="cardOpt3"
+                                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i
+                                                    class="icon-base bx bx-dots-vertical-rounded text-body-secondary"></i>
                                             </button>
                                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
                                                 <a class="dropdown-item" href="javascript:void(0);">View
@@ -61,9 +68,10 @@
                                             <img src="images/wallet-info.png" alt="wallet info" class="rounded">
                                         </div>
                                         <div class="dropdown">
-                                            <button class="btn p-0" type="button" id="cardOpt6" data-bs-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false">
-                                                <i class="icon-base bx bx-dots-vertical-rounded text-body-secondary"></i>
+                                            <button class="btn p-0" type="button" id="cardOpt6"
+                                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i
+                                                    class="icon-base bx bx-dots-vertical-rounded text-body-secondary"></i>
                                             </button>
                                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt6">
                                                 <a class="dropdown-item" href="javascript:void(0);">View
@@ -91,8 +99,8 @@
                                         <h5 class="m-0 me-2">Total Revenue</h5>
                                     </div>
                                     <div class="dropdown">
-                                        <button class="btn p-0" type="button" id="totalRevenue" data-bs-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false">
+                                        <button class="btn p-0" type="button" id="totalRevenue"
+                                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i
                                                 class="icon-base bx bx-dots-vertical-rounded icon-lg text-body-secondary"></i>
                                         </button>
@@ -179,7 +187,8 @@
                                         <div class="dropdown">
                                             <button class="btn p-0" type="button" id="cardOpt4"
                                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="icon-base bx bx-dots-vertical-rounded text-body-secondary"></i>
+                                                <i
+                                                    class="icon-base bx bx-dots-vertical-rounded text-body-secondary"></i>
                                             </button>
                                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt4">
                                                 <a class="dropdown-item" href="javascript:void(0);">View
@@ -190,7 +199,8 @@
                                     </div>
                                     <p class="mb-1">Payments</p>
                                     <h4 class="card-title mb-3">$2,456</h4>
-                                    <small class="text-danger fw-medium"><i class="icon-base bx bx-down-arrow-alt"></i>
+                                    <small class="text-danger fw-medium"><i
+                                            class="icon-base bx bx-down-arrow-alt"></i>
                                         -14.82%</small>
                                 </div>
                             </div>
@@ -205,7 +215,8 @@
                                         <div class="dropdown">
                                             <button class="btn p-0" type="button" id="cardOpt1"
                                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="icon-base bx bx-dots-vertical-rounded text-body-secondary"></i>
+                                                <i
+                                                    class="icon-base bx bx-dots-vertical-rounded text-body-secondary"></i>
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="cardOpt1">
                                                 <a class="dropdown-item" href="javascript:void(0);">View
@@ -248,6 +259,81 @@
                 </div>
             </div>
             <div class="row">
+                <!-- Donations -->
+                <div class="col-md-6 col-lg-4 col-xl-4 mb-6">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="card-title mb-0">Donations</h5>
+                            <div class="dropdown">
+                                <button class="btn text-body-secondary p-0" type="button" data-bs-toggle="dropdown">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a class="dropdown-item" href="{{ route('admin.donations.index') }}">View All</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body d-flex align-items-center justify-content-between">
+                            <div>
+                                <h3 class="mb-1">{{ number_format($totalDonations) }}</h3>
+                                <small class="text-muted">Total Donations</small>
+                            </div>
+                            <i class="bx bx-dollar-circle fs-1 text-success"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Members -->
+                <div class="col-md-6 col-lg-4 col-xl-4 mb-6">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="card-title mb-0">Members</h5>
+                            <div class="dropdown">
+                                <button class="btn text-body-secondary p-0" type="button" data-bs-toggle="dropdown">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a class="dropdown-item" href="{{ route('admin.users.index') }}">View All</a>
+                                    <a class="dropdown-item" href="{{ route('admin.users.create') }}">Add New Member</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body d-flex align-items-center justify-content-between">
+                            <div>
+                                <h3 class="mb-1">{{ number_format($totalMembers) }}</h3>
+                                <small class="text-muted">Total Members</small>
+                            </div>
+                            <i class="bx bx-user fs-1 text-primary"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Events -->
+                <div class="col-md-6 col-lg-4 col-xl-4 mb-6">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="card-title mb-0">Events</h5>
+                            <div class="dropdown">
+                                <button class="btn text-body-secondary p-0" type="button" data-bs-toggle="dropdown">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a class="dropdown-item" href="{{ route('admin.events.index') }}">View All</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body d-flex align-items-center justify-content-between">
+                            <div>
+                                <h3 class="mb-1">{{ number_format($totalEvents) }}</h3>
+                                <small class="text-muted">Total Events</small>
+                            </div>
+                            <i class="bx bx-calendar-event fs-1 text-warning"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
                 <!-- Order Statistics -->
                 <div class="col-md-6 col-lg-4 col-xl-4 order-0 mb-6">
                     <div class="card h-100">
@@ -282,7 +368,8 @@
                                         <span class="avatar-initial rounded bg-label-primary"><i
                                                 class="icon-base bx bx-mobile-alt"></i></span>
                                     </div>
-                                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                    <div
+                                        class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                         <div class="me-2">
                                             <h6 class="mb-0">Electronic</h6>
                                             <small>Mobile, Earbuds, TV</small>
@@ -297,7 +384,8 @@
                                         <span class="avatar-initial rounded bg-label-success"><i
                                                 class="icon-base bx bx-closet"></i></span>
                                     </div>
-                                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                    <div
+                                        class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                         <div class="me-2">
                                             <h6 class="mb-0">Fashion</h6>
                                             <small>T-shirt, Jeans, Shoes</small>
@@ -312,7 +400,8 @@
                                         <span class="avatar-initial rounded bg-label-info"><i
                                                 class="icon-base bx bx-home-alt"></i></span>
                                     </div>
-                                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                    <div
+                                        class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                         <div class="me-2">
                                             <h6 class="mb-0">Decor</h6>
                                             <small>Fine Art, Dining</small>
@@ -327,7 +416,8 @@
                                         <span class="avatar-initial rounded bg-label-secondary"><i
                                                 class="icon-base bx bx-football"></i></span>
                                     </div>
-                                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                    <div
+                                        class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                         <div class="me-2">
                                             <h6 class="mb-0">Sports</h6>
                                             <small>Football, Cricket Kit</small>
@@ -349,9 +439,10 @@
                         <div class="card-header nav-align-top">
                             <ul class="nav nav-pills flex-wrap row-gap-2" role="tablist">
                                 <li class="nav-item">
-                                    <button type="button" class="nav-link active" role="tab" data-bs-toggle="tab"
-                                        data-bs-target="#navs-tabs-line-card-income"
-                                        aria-controls="navs-tabs-line-card-income" aria-selected="true">Income</button>
+                                    <button type="button" class="nav-link active" role="tab"
+                                        data-bs-toggle="tab" data-bs-target="#navs-tabs-line-card-income"
+                                        aria-controls="navs-tabs-line-card-income"
+                                        aria-selected="true">Income</button>
                                 </li>
                                 <li class="nav-item">
                                     <button type="button" class="nav-link" role="tab">Expenses</button>
@@ -363,7 +454,8 @@
                         </div>
                         <div class="card-body">
                             <div class="tab-content p-0">
-                                <div class="tab-pane fade show active" id="navs-tabs-line-card-income" role="tabpanel">
+                                <div class="tab-pane fade show active" id="navs-tabs-line-card-income"
+                                    role="tabpanel">
                                     <div class="d-flex mb-6">
                                         <div class="avatar flex-shrink-0 me-3">
                                             <img src="images/wallet.png" alt="User">
@@ -419,7 +511,8 @@
                                     <div class="avatar flex-shrink-0 me-3">
                                         <img src="images/paypal.png" alt="User" class="rounded">
                                     </div>
-                                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                    <div
+                                        class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                         <div class="me-2">
                                             <small class="d-block">Paypal</small>
                                             <h6 class="fw-normal mb-0">Send money</h6>
@@ -434,7 +527,8 @@
                                     <div class="avatar flex-shrink-0 me-3">
                                         <img src="images/wallet.png" alt="User" class="rounded">
                                     </div>
-                                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                    <div
+                                        class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                         <div class="me-2">
                                             <small class="d-block">Wallet</small>
                                             <h6 class="fw-normal mb-0">Mac'D</h6>
@@ -449,7 +543,8 @@
                                     <div class="avatar flex-shrink-0 me-3">
                                         <img src="images/chart.png" alt="User" class="rounded">
                                     </div>
-                                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                    <div
+                                        class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                         <div class="me-2">
                                             <small class="d-block">Transfer</small>
                                             <h6 class="fw-normal mb-0">Refund</h6>
@@ -464,7 +559,8 @@
                                     <div class="avatar flex-shrink-0 me-3">
                                         <img src="images/cc-primary.png" alt="User" class="rounded">
                                     </div>
-                                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                    <div
+                                        class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                         <div class="me-2">
                                             <small class="d-block">Credit Card</small>
                                             <h6 class="fw-normal mb-0">Ordered Food</h6>
@@ -479,7 +575,8 @@
                                     <div class="avatar flex-shrink-0 me-3">
                                         <img src="images/wallet.png" alt="User" class="rounded">
                                     </div>
-                                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                    <div
+                                        class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                         <div class="me-2">
                                             <small class="d-block">Wallet</small>
                                             <h6 class="fw-normal mb-0">Starbucks</h6>
@@ -494,7 +591,8 @@
                                     <div class="avatar flex-shrink-0 me-3">
                                         <img src="images/cc-warning.png" alt="User" class="rounded">
                                     </div>
-                                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                    <div
+                                        class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                         <div class="me-2">
                                             <small class="d-block">Mastercard</small>
                                             <h6 class="fw-normal mb-0">Ordered Food</h6>

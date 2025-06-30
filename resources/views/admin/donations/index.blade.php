@@ -6,9 +6,6 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h3 class="card-title">Donations</h3>
-                        <div class="mb-3">
-                            <a href="{{ route('admin.donations.create') }}" class="btn btn-primary">Add New Donation</a>
-                        </div>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -19,12 +16,11 @@
                                 <table class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
+                                            <th>First Name</th>
                                             <th>Email</th>
                                             <th>Phone</th>
                                             <th>Amount</th>
                                             <th>Message</th>
-                                            <th>Donation Date</th>
                                             <th>Status</th>
                                             <th>Actions</th>
                                         </tr>
@@ -32,12 +28,11 @@
                                     <tbody>
                                         @foreach ($donations as $donation)
                                             <tr>
-                                                <td>{{ $donation->name }}</td>
+                                                <td>{{ $donation->first_name }}</td>
                                                 <td>{{ $donation->email }}</td>
                                                 <td>{{ $donation->phone }}</td>
                                                 <td>{{ $donation->amount }}</td>
                                                 <td>{{ $donation->message }}</td>
-                                                <td>{{ $donation->donation_date->format('Y-m-d') }}</td>
                                                 <td>{{ $donation->status }}</td>
 
                                                 <td>

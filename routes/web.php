@@ -2,9 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\Frontend\DonationController as FrontendDonationController;
 use App\Http\Controllers\Admin\SermonController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\DonationController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\AdminAuth\LoginController as AdminLoginController;
@@ -20,6 +23,26 @@ use App\Http\Controllers\UserAuth\RegisterController as UserRegisterController;
  * Frontend Home
  */
 Route::get('/', [FrontendController::class, 'index'])->name('home');
+
+Route::get('about', [FrontendController::class, 'about'])->name('about.index');
+// Display the form
+Route::get('contact', [FrontendController::class, 'showContact'])->name('contacts.index');
+
+Route::get('donations', [FrontendController::class, 'donations'])->name('donations.index');
+Route::post('/donate', [FrontendDonationController::class, 'store'])->name('donations.storePublic');
+
+Route::get('events', [FrontendController::class, 'events'])->name('events.index');
+Route::get('events/{event}', [FrontendController::class, 'showEvent'])->name('events.show');
+
+Route::get('ministries', [FrontendController::class, 'ministries'])->name('ministries.index');
+Route::get('ministries/{ministry}', [FrontendController::class, 'showMinistry'])->name('ministries.show');
+
+
+// Handle submission
+Route::post('contact', [FrontendController::class, 'submitContact'])->name('contact.submit');
+
+Route::get('sermons', [FrontendController::class, 'sermons'])->name('sermons.index');
+Route::get('sermons/{sermon}', [FrontendController::class, 'showSermon'])->name('sermons.show');
 
 
 /**
@@ -40,10 +63,16 @@ Route::prefix('admin')->name('admin.')->middleware('auth:admin')->group(function
     Route::get('dashboard', [AdminController::class, 'index'])->name('dashboard');
     Route::post('logout',   [AdminLoginController::class, 'logout'])->name('logout');
 
+    Route::resource('categories', CategoryController::class);
+    // Contacts
+    Route::resource('contacts', ContactController::class)
+        ->only(['index', 'show', 'destroy']);
     // Sermons
     Route::resource('sermons', SermonController::class);
 
-    Route::resource('donations', DonationController::class);
+    Route::resource('donations', DonationController::class)
+        ->except(['create'])
+    ;
     // Events
     Route::resource('events', EventController::class);
     // Members

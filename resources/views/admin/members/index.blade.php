@@ -14,74 +14,82 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <table class="table table-striped table-bordered" id="membersTable">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Role</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($members as $member)
+                        @if (session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered" id="membersTable">
+                                <thead>
                                     <tr>
-                                        <td>{{ $member->id }}</td>
-                                        <td>{{ $member->name }}</td>
-                                        <td>{{ $member->email }}</td>
-                                        <td>{{ $member->phone ?? 'N/A' }}</td>
-                                        <td>{{ $member->role }}</td>
-                                        <td>
-                                            <a href="{{ route('admin.members.edit', $member->id) }}"
-                                                class="btn btn-sm btn-warning">Edit</a>
-                                            <form action="{{ route('admin.members.destroy', $member->id) }}"
-                                                method="POST" style="display:inline;">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="button" class="btn btn-sm btn-danger"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#deleteModal{{ $member->id }}">Delete</button>
-                                            </form>
-                                            <a href="{{ route('admin.members.show', $member->id) }}"
-                                                class="btn btn-sm btn-info">View</a>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Role</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($members as $member)
+                                        <tr>
+                                            <td>{{ $member->name }}</td>
+                                            <td>{{ $member->email }}</td>
+                                            <td>{{ $member->phone ?? 'N/A' }}</td>
+                                            <td>{{ $member->role }}</td>
+                                            <td>
+                                                <a href="{{ route('admin.members.edit', $member->id) }}"
+                                                    class="btn btn-sm btn-warning">Edit</a>
+                                                <form action="{{ route('admin.members.destroy', $member->id) }}"
+                                                    method="POST" style="display:inline;">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="button" class="btn btn-sm btn-danger"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#deleteModal{{ $member->id }}">Delete</button>
+                                                </form>
+                                                <a href="{{ route('admin.members.show', $member->id) }}"
+                                                    class="btn btn-sm btn-info">View</a>
 
-                                            <!-- Delete Confirmation Modal -->
-                                            <div class="modal fade"
-                                                id="deleteModal{{ $member->id }}" tabindex="-1"
-                                                aria-labelledby="deleteModalLabel{{ $member->id }}"
-                                                aria-hidden="true">
-                                                <div class="modal-dialog modal-dialog-centered">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title"
-                                                                id="deleteModalLabel{{ $member->id }}">Confirm
-                                                                Deletion</h5>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            Are you sure you want to delete this member?
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary"
-                                                                data-bs-dismiss="modal">Cancel</button>
-                                                            <form action="{{ route('admin.members.destroy', $member->id) }}"
-                                                                method="POST">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <button type="submit" class="btn btn-danger">Delete</button>
-                                                            </form>
+                                                <!-- Delete Confirmation Modal -->
+                                                <div class="modal fade"
+                                                    id="deleteModal{{ $member->id }}" tabindex="-1"
+                                                    aria-labelledby="deleteModalLabel{{ $member->id }}"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title"
+                                                                    id="deleteModalLabel{{ $member->id }}">Confirm
+                                                                    Deletion</h5>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                Are you sure you want to delete this member?
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal">Cancel</button>
+                                                                <form action="{{ route('admin.members.destroy', $member->id) }}"
+                                                                    method="POST">
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                                </form>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                            <div>
+                                {{ $members->links() }}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -21,7 +21,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6">
-                                <p><strong>Name:</strong> {{ $donation->name }}</p>
+                                <p><strong>Name:</strong> {{ $donation->first_name }}</p>
                                 <p><strong>Email:</strong> {{ $donation->email }}</p>
                                 <p><strong>Phone:</strong> {{ $donation->phone }}</p>
                                 <p><strong>Amount:</strong> {{ $donation->amount }}</p>

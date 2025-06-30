@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class EventController extends Controller
 {
@@ -32,23 +33,21 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'nullable|string|max:1000',
-            'location' => 'required|string|max:155',
-            'date' => 'required|date',
-            'time' => 'nullable|date_format:H:i',
+        $data = $request->validate([
+            'date'  => 'required|date',
+            'time'  => 'nullable|date_format:H:i',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
         ]);
 
-        Event::create([
-            'title' => $request->input('title'),
-            'description' => $request->input('description'),
-            'location' => $request->input('location'),
-            'date' => $request->input('date'),
-            'time' => $request->input('time'),
-        ]);
+        if ($file = $request->file('image')) {
+            $data['image'] = $file->store('events', 'public');
+        }
 
-        return redirect()->route('admin.events.index')->with('success', 'Event created successfully.');
+        Event::create($data);
+
+        return redirect()
+            ->route('admin.events.index')
+            ->with('success', 'Event created successfully.');
     }
 
     /**
@@ -76,24 +75,27 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'date' => 'required|date',
-            'location' => 'required|string|max:155',
-            'description' => 'nullable|string|max:1000',
-            'time' => 'nullable|date_format:H:i',
+        $data = $request->validate([
+            'date'  => 'required|date',
+            'time'  => 'nullable|timezone',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
         ]);
 
-        $event->update([
-            'title' => $request->input('title'),
-            'date' => $request->input('date'),
-            'location' => $request->input('location'),
-            'description' => $request->input('description'),
-            'time' => $request->input('time'),
-        ]);
+        if ($file = $request->file('image')) {
+            // delete old
+            if ($event->image) {
+                \Storage::disk('public')->delete($event->image);
+            }
+            $data['image'] = $file->store('events', 'public');
+        }
 
-        return redirect()->route('admin.events.index')->with('success', 'Event updated successfully.');
+        $event->update($data);
+
+        return redirect()
+            ->route('admin.events.index')
+            ->with('success', 'Event updated successfully.');
     }
+
 
     /**
      * Remove the specified resource from storage.
